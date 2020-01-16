@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>WHO'S IN SPACE</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="txt">
+      WHO'S IN SPACE
+    </div>
+  </div>
+
+  <!-- peopleSpaceApp -->
+  <div class="content">
+    <div id="peopleSpaceApp">
+      <div class="title">
+        DETAILS
+      </div>
+      <table>
+        <tr>
+          <th>NAME</th>
+          <th>SHIP</th>
+        </tr>
+        <tr v-for="p of people">
+          <td>{{p.name|uppercase}}</td>
+          <td>{{p.craft}}</td>
+        </tr>
+      </table>
+      <div class="details">
+        TOTAL PEOPLE: {{count}}
+      </div>
+    </div>
+  </div>
+
+  <!-- issNowApp -->
+  <div class="content">
+    <div id="issNowApp">
+      <div class="title">
+        ISS LOCATION
+      </div>
+      <div class="loc" v-if="iss_position">
+        LONGITUDE:{{iss_position.longitude}}<br>
+        LATITUDE:{{iss_position.latitude}}<br>
+      </div>
+      <div class="details">
+        TIME:{{timestamp|time}}
+      </div>
+    </div>
+  </div>
+
+  <!-- issPassApp -->
+  <div class="content">
+    <div id="issPassApp">
+      <div class="title" v-if="request">
+        ISS PASSING TIME AT YOUR LOCATION<br>
+        LONGITUDE:{{request.longitude|loc}}<br>
+        LATITUDE:{{request.latitude|loc}}<br>
+      </div>
+      <table>
+        <tr>
+          <th>RISETIME</th>
+          <th>DURATION</th>
+        </tr>
+        <tr v-for="p of iss_pass">
+          <td>{{p.risetime|time}}</td>
+          <td>{{p.duration}}s</td>
+        </tr>
+      </table>
+      <div class="details" v-if="request">
+        TOTAL PASSES: {{request.passes}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Under Construction
+  <div id="app">
+    <p>
+      <router-link to="/peopleSpace">peopleSpace</router-link>
+      <router-link to="/issNow">issNow</router-link>
+      <router-link to="/issPass">issPass</router-link>
+    </p>
+    <router-view></router-view>
+  </div> -->
+
+  <script src="index.js"></script>
+</body>
+
+</html>
