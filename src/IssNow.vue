@@ -20,7 +20,7 @@ export default {
     return { iss_position: null, timestamp: 0 };
   },
   created() {
-    const issNowUrl = "http://api.open-notify.org/iss-now.json";
+    const issNowUrl = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json";
     this.$http
       .get(issNowUrl)
       .then(

@@ -24,7 +24,7 @@ export default {
     return { people: null, count: 0 };
   },
   created() {
-    const peopleSpaceUrl = "http://api.open-notify.org/astros.json";
+    const peopleSpaceUrl = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json";
     this.$http
       .get(peopleSpaceUrl)
       .then(
