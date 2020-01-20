@@ -1,9 +1,13 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/peoplespace">peoplespace</router-link><!-- 
-      --><router-link to="/issnow">issnow</router-link><!-- 
-      --><router-link to="/isspass">isspass</router-link>
+      <router-link to="/peoplespace">peoplespace</router-link>
+      <!-- 
+      -->
+      <router-link to="/issnow">issnow</router-link>
+      <!-- 
+      -->
+      <router-link to="/isspass">isspass</router-link>
     </nav>
     <router-view></router-view>
   </div>
@@ -55,7 +59,7 @@ nav {
   font-weight: 800;
 }
 
-a:link {
+nav a:link {
   color: white;
   text-decoration: none;
   padding: 5px 20px;
@@ -65,23 +69,18 @@ a:link {
   /* margin-right: -5px; */
 }
 
-a:visited {
+nav a:visited {
   color: white;
   text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
   background-color: #f2f2ff;
   color: blueviolet;
   text-decoration: none;
 }
 
-a:active {
-  background-color: lavender;
-  color: blueviolet;
-  text-decoration: none;
-}
-.router-link-exact-active.router-link-active {
+nav .router-link-exact-active.router-link-active {
   background-color: lavender;
   color: blueviolet;
   text-decoration: none;
