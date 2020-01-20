@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/peopleSpace">peopleSpace</router-link>
-      <router-link to="/issNow">issNow</router-link>
-      <router-link to="/issPass">issPass</router-link>
+      <router-link to="/peoplespace">peoplespace</router-link><!-- 
+      --><router-link to="/issnow">issnow</router-link><!-- 
+      --><router-link to="/isspass">isspass</router-link>
     </nav>
     <router-view></router-view>
   </div>
@@ -20,19 +20,23 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/peopleSpace",
-    name: "peopleSpaceApp",
+    path: "/peoplespace",
+    name: "peoplespace",
     component: PeopleSpace
   },
   {
-    path: "/issNow",
-    name: "issNowApp",
+    path: "/issnow",
+    name: "issnow",
     component: IssNow
   },
   {
-    path: "/issPass",
-    name: "issPassApp",
+    path: "/isspass",
+    name: "isspass",
     component: IssPass
+  },
+  {
+    path: "/",
+    redirect: "/peoplespace"
   }
 ];
 
@@ -58,6 +62,7 @@ a:link {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  /* margin-right: -5px; */
 }
 
 a:visited {
@@ -66,13 +71,19 @@ a:visited {
 }
 
 a:hover {
-  color: white;
   background-color: lavender;
   color: mediumslateblue;
+  text-decoration: none;
 }
 
 a:active {
-  color: white;
+  background-color: lavender;
+  color: mediumslateblue;
+  text-decoration: none;
+}
+.router-link-exact-active.router-link-active {
+  background-color: lavender;
+  color: mediumslateblue;
   text-decoration: none;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div id="issNowApp">
+    <div id="issnow">
       <div class="title">ISS LOCATION</div>
       <div class="loc" v-if="iss_position">
         LONGITUDE:{{iss_position.longitude}}
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "#issNowApp",
+  name: "#issnow",
   data() {
     return { iss_position: null, timestamp: 0 };
   },

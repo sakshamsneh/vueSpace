@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div id="issPassApp">
+    <div id="isspass">
       <div class="title" v-if="request">
         ISS PASSING TIME AT YOUR LOCATION
         <br />
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "#issPassApp",
+  name: "#isspass",
   data() {
     return { iss_pass: null, request: null };
   },

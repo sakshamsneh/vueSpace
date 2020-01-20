@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div id="peopleSpaceApp">
+    <div id="peoplespace">
       <div class="title">DETAILS</div>
       <table>
         <tr>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "peopleSpaceApp",
+  name: "peoplespace",
   data() {
     return { people: null, count: 0 };
   },
