@@ -71,19 +71,19 @@ a:visited {
 }
 
 a:hover {
-  background-color: lavender;
-  color: mediumslateblue;
+  background-color: #f2f2ff;
+  color: blueviolet;
   text-decoration: none;
 }
 
 a:active {
   background-color: lavender;
-  color: mediumslateblue;
+  color: blueviolet;
   text-decoration: none;
 }
 .router-link-exact-active.router-link-active {
   background-color: lavender;
-  color: mediumslateblue;
+  color: blueviolet;
   text-decoration: none;
 }
 </style>
