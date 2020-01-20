@@ -10,6 +10,10 @@ module.exports = {
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
     ]
   },
+  devServer: {
+    open: true,
+    hot: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',

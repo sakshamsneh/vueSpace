@@ -14,7 +14,7 @@
           <th>RISETIME</th>
           <th>DURATION</th>
         </tr>
-        <tr v-for="p of iss_pass" v-bind:key="p">
+        <tr v-for="p of iss_pass" v-bind:key="p.duration">
           <td>{{p.risetime|time}}</td>
           <td>{{p.duration}}s</td>
         </tr>
@@ -40,7 +40,7 @@ export default {
       pos => {
         var url =
           issPassUrlCors + pos.coords.latitude + "&lon=" + pos.coords.longitude;
-        axios.get(url).then(
+        this.$http.get(url).then(
           response => (
             (this.iss_pass = response.data.response),
             (this.request = response.data.request)

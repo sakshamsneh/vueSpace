@@ -21,7 +21,7 @@ export default {
   },
   created() {
     const issNowUrl = "http://api.open-notify.org/iss-now.json";
-    axios
+    this.$http
       .get(issNowUrl)
       .then(
         response => (

@@ -7,7 +7,7 @@
           <th>NAME</th>
           <th>SHIP</th>
         </tr>
-        <tr v-for="p of people" v-bind:key="p">
+        <tr v-for="p of people" v-bind:key="p.name">
           <td>{{p.name|uppercase}}</td>
           <td>{{p.craft}}</td>
         </tr>
@@ -25,7 +25,7 @@ export default {
   },
   created() {
     const peopleSpaceUrl = "http://api.open-notify.org/astros.json";
-    axios
+    this.$http
       .get(peopleSpaceUrl)
       .then(
         response => (
