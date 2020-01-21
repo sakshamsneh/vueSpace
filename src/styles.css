@@ -11,6 +11,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.wrapper{
+  position: relative;
+  min-height: 100%;
+}
+
 .header {
   background-color: #0066ff;
 }
