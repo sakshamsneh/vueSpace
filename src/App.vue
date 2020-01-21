@@ -53,15 +53,14 @@ export default {
 
 <style>
 nav {
-  background-color: blueviolet;
+  background-color: var(--primary-color);
   font-size: 110%;
   text-transform: uppercase;
   font-weight: 800;
 }
 
 nav a:link {
-  color: white;
-  text-decoration: none;
+  color: var(--header-text-color);
   padding: 5px 20px;
   text-align: center;
   text-decoration: none;
@@ -70,18 +69,18 @@ nav a:link {
 }
 
 nav a:visited {
-  color: white;
+  color: var(--header-text-color);
   text-decoration: none;
 }
 
 nav a:hover {
-  background-color: #f2f2ff;
+  background-color: var(--accent-color);
   color: blueviolet;
   text-decoration: none;
 }
 
 nav .router-link-exact-active.router-link-active {
-  background-color: lavender;
+  background-color: var(--secondary-color);
   color: blueviolet;
   text-decoration: none;
 }
