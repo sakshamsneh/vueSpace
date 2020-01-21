@@ -2,11 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/peoplespace">peoplespace</router-link>
-      <!-- 
-      -->
       <router-link to="/issnow">issnow</router-link>
-      <!-- 
-      -->
       <router-link to="/isspass">isspass</router-link>
     </nav>
     <router-view></router-view>
@@ -41,10 +37,14 @@ const routes = [
   {
     path: "/",
     redirect: "/peoplespace"
+  },
+  {
+    path: "*",
+    redirect: "/"
   }
 ];
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({ routes: routes });
 
 export default {
   router
@@ -66,7 +66,7 @@ nav a:link {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  /* margin-right: -5px; */
+  margin-right: -5px;
 }
 
 nav a:visited {
