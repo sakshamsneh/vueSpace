@@ -7,6 +7,7 @@
         <br />
         LATITUDE:{{iss_position.latitude}}
         <br />
+        <HereMap lat="37.7397" lng="-121.4252" width="100%" height="30vh" style="margin:0vh" />
       </div>
       <div class="details">TIME:{{timestamp|time}}</div>
     </div>
@@ -14,13 +15,19 @@
 </template>
 
 <script>
+import HereMap from "./HereMap.vue";
+
 export default {
   name: "#issnow",
   data() {
     return { iss_position: null, timestamp: 0 };
   },
+  components: {
+    HereMap
+  },
   created() {
-    const issNowUrl = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json";
+    // const issNowUrl = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json";
+    const issNowUrl = "http://api.open-notify.org/iss-now.json";
     this.$http
       .get(issNowUrl)
       .then(
