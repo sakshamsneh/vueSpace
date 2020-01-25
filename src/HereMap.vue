@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import Vue from "vue";
-import axios from "axios";
-Vue.prototype.$http = axios;
-
+import api_key from "./.env";
 export default {
   name: "HereMap",
   data() {
@@ -33,7 +30,7 @@ export default {
   },
   created() {
     this.platform = new H.service.Platform({
-      
+      apikey: api_key
     });
   },
   mounted() {
