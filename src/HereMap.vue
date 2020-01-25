@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import api_key from "./.env";
+import ISSIcon from "./ISSIcon.png";
+
 export default {
   name: "HereMap",
   data() {
     return {
       map: {},
       platform: {},
-      // iss_position: null,
       marker: null
     };
   },
@@ -30,7 +30,7 @@ export default {
   },
   created() {
     this.platform = new H.service.Platform({
-      apikey: api_key
+      apikey: "jJxD2CHV2npBrY5Q0P4lSoawxT_lRqeVuqPd5vCCP2I"
     });
   },
   mounted() {
@@ -40,7 +40,7 @@ export default {
       zoom: 3,
       center: iss_position
     });
-    var icon = new H.map.Icon("./src/ISSIcon.png");
+    var icon = new H.map.Icon(ISSIcon);
     this.marker = new H.map.Marker(iss_position, { icon: icon });
     this.map.addObject(this.marker);
 
