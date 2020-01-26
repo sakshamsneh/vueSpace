@@ -10,8 +10,6 @@ new Vue({
   render: h => h(App),
 });
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
@@ -23,6 +21,7 @@ function switchTheme(e) {
   }
 }
 
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 toggleSwitch.addEventListener('change', switchTheme, false);
 
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
@@ -45,7 +44,6 @@ function detectColorScheme() {
   } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     theme = "dark";
   }
-
   if (theme == "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
