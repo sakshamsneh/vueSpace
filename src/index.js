@@ -10,25 +10,29 @@ new Vue({
   render: h => h(App),
 });
 
+var click = true;
+var themeicon = document.getElementById("theme-icon");
 function switchTheme(e) {
-  if (e.target.checked) {
+  if (click === true) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
+    click = false;
+    themeicon.innerHTML = "brightness_5";
   }
   else {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
+    click = true;
+    themeicon.innerHTML = "brightness_3";
   }
 }
-
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-toggleSwitch.addEventListener('change', switchTheme, false);
 
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
   if (currentTheme === 'dark') {
-    toggleSwitch.checked = true;
+    click = false;
+    themeicon.innerHTML = "brightness_5";
   }
 }
 
@@ -46,6 +50,13 @@ function detectColorScheme() {
   }
   if (theme == "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
+    click = false;
+    themeicon.innerHTML = "brightness_5";
+  } else {
+    click = true;
+    themeicon.innerHTML = "brightness_3";
   }
 }
+
+document.getElementById("theme-switch").onclick = function () { switchTheme() };
 detectColorScheme();

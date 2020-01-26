@@ -53,6 +53,7 @@ export default {
     this.marker = new H.map.Marker(this.iss_position, { icon: icon });
     this.map.addObject(this.marker);
 
+    // const issNowUrl = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json";
     const issNowUrl = "http://api.open-notify.org/iss-now.json";
     var issp = this.iss_position;
     var time = null;
